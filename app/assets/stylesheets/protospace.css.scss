@@ -321,6 +321,19 @@ body {
   }
 }
 
+ .new-like {
+  &__button{
+    float: right;
+    min-width: 100px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  i {
+    padding-right: 5px;
+  }
+ }
+
+
+
 .proto-page {
   .user-nav {
     padding: 50px 0;
