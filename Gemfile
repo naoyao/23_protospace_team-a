@@ -19,6 +19,7 @@ gem 'rmagick'
 gem 'mysql2'
 group :development, :test do
   gem 'byebug'
+gem 'kaminari'
 end
 
 group :development do
