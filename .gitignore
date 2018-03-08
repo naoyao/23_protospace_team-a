@@ -1,0 +1,10 @@
+
+*.jpg
+
+tmp/pids/server.pid
+
+*.jpeg
+
+*.log
+
+log/development.log
