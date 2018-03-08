@@ -17,6 +17,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'mysql2'
+
 group :development, :test do
   gem 'byebug'
 end
