@@ -21,6 +21,13 @@ class PrototypesController < ApplicationController
 
   def show
   end
+  #destroyアクション作成しました
+  #削除後redirectでrootに飛ばすようにしました
+  def destroy
+    prototype = Prototype.find(params[:id])
+    prototype.destroy if prototype.user_id == current_user.id
+    redirect_to :action => 'index'
+  end
 
   private
 
