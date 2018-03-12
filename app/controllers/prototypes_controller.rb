@@ -22,6 +22,15 @@ class PrototypesController < ApplicationController
   def show
   end
 
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def update
+    @prototype.update(prototype_params)
+    redirect_to :root, notice: 'Your user infomation was successfully updated'
+    end
+
   private
 
   def set_prototype
