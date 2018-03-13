@@ -16,9 +16,9 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'mysql2', '0.3.18'
+gem 'kaminari'
 group :development, :test do
   gem 'byebug'
-gem 'kaminari'
 end
 
 group :development do

@@ -230,12 +230,8 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
   mysql2 (= 0.3.18)
-=======
   kaminari
-  mysql2
->>>>>>> master
   pry-rails
   rails (= 4.2.5)
   rmagick
