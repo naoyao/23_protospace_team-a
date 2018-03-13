@@ -2,3 +2,15 @@
 Gemfile
 
 Gemfile.lock
+*.jpg
+
+tmp/pids/server.pid
+tmp/*
+*.jpeg
+
+*.log
+
+log/development.log
+log/*
+
+public/uploads/*
