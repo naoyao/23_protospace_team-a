@@ -1,6 +1,6 @@
 // 参考資料
 // https://www.cresco.co.jp/blog/entry/710/
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
   // コンソールから確認したid
   // prototype_captured_images_attributes_0_content
   $("#prototype_captured_images_attributes_0_content").on('change',function(){
