@@ -14,12 +14,18 @@
             .degree
               = @prototype.user.position
       .like
-        %form.new-like
-          %input{style: 'display:none'}
-          %button.btn.btn-default.new-like__button
-            %image.new-like_image{src: '/assets/icon_heart.svg', alt: 'Icon heart'}
-            Like
-            %span.num 0
+        - if @like.present?
+          = link_to "/prototypes/#{@prototype.id}/likes/#{@like.id}", method: :delete do
+            =button_tag class:'btn btn-default new-like__button pink-heart' do
+              %image.new-like__image{src: '/assets/icon_heart-pink.svg', alt: 'Icon heart'}
+              Like
+              %span.num 0
+        - else
+          = link_to "/prototypes/#{@prototype.id}/likes", method: :post do
+            =button_tag class:'btn btn-default new-like__button' do
+              %image.new-like__image{src: '/assets/icon_heart.svg', alt: 'Icon heart'}
+              Like
+              %span.num 0
 
   .row
     .col-md-9.image-box
