@@ -14,6 +14,7 @@
             = link_to "#{@prototype.user.name}", user_path(@prototype.user)
             .degree
               = @prototype.user.position
+              
   .row
     .col-md-9.image-box
       = image_tag(@prototype.set_main_thumbnail.large, class: 'img-responsive img-size-fix', style: "margin: 0 auto;")
@@ -22,6 +23,7 @@
         - @prototype.captured_images.sub.each do |image|
           %li.list-group-item
             = image_tag(image.content, class: 'img-responsive')
+
   .row.proto-description
     .col-md-3
       %h4 Catch Copy

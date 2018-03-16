@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: :show
+  before_action :set_prototype, only: [:show, :edit, :update]
 
   def index
     @prototypes = Prototype.all
@@ -23,13 +23,14 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype = Prototype.find(params[:id])
+    # @prototype = Prototype.find(params[:id])
   end
 
   def update
-    @prototype.update(prototype_params)
-    redirect_to :root, notice: 'Your user infomation was successfully updated'
-    end
+    # binding.pry
+     @prototype.update(prototype_params) if @prototype.user_id == current_user.id
+     redirect_to :root, notice: 'Prototype was successfully update'
+   end
 
   private
 
@@ -42,8 +43,10 @@ class PrototypesController < ApplicationController
       :title,
       :catch_copy,
       :concept,
-      :user_id,
-      captured_images_attributes: [:content, :status]
+      :image,
+      :image_cache,
+      # :user_id,
+      captured_images_attributes: [:content, :status, :id]
     )
   end
 end

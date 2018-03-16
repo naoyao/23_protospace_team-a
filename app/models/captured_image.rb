@@ -7,5 +7,6 @@ class CapturedImage < ActiveRecord::Base
 
   validates :content,
             :status,
+            # :prototype_id,
             presence: true
 end
