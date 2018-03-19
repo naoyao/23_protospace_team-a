@@ -1,5 +1,6 @@
 class Prototype < ActiveRecord::Base
   belongs_to :user
+  # belongs_to :captured_images
   has_many :captured_images, dependent: :destroy
 
   accepts_nested_attributes_for :captured_images, reject_if: :reject_sub_images

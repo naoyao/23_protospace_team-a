@@ -1,5 +1,6 @@
 .container.proto-new
   = form_for @prototype do |f|
+
     = f.hidden_field :user_id, value: current_user.id
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
@@ -14,8 +15,8 @@
           %h4 Main Thumbnail
           .cover-image-upload#main_image_uploader
             = f.fields_for :captured_images do |image|
-              -# %img
-              = image.label :image
+              %img
+              -# = image.label :image
               = image.file_field :content, required: true
               = image.hidden_field :status, value: "main"
 
@@ -29,7 +30,7 @@
                     %img
                     -# = f.label :image
                     = image.file_field :content
-                    = image.hidden_field :status, value: "sub"
+                    -# = image.hidden_field :status, value: "sub"
         -# 編集画像選択 @end
 
       .row.proto-description
