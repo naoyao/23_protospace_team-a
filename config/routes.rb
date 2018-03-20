@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'prototypes#index'
 
   #prototypesのdeleateだったものをdestroyに変更しました。
-  resources :prototypes, only: [:index, :new, :create, :show, :destroy]
+  resources :prototypes, only: [:index, :new, :create, :show, :destroy, :edit, :update]
   resources :users, only: [:show, :edit, :update]
 end
