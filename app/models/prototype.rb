@@ -21,4 +21,8 @@ class Prototype < ActiveRecord::Base
   def posted_date
     created_at.strftime('%b %d %a')
   end
+
+  def like_count
+    Like.where(prototype_id: self.id).count
+  end
 end

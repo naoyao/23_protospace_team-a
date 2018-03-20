@@ -20,9 +20,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @like = Like.find_by(
-            user_id: current_user.id ,
-            prototype_id: params[:id])
+    @like = Like.find_by( user_id: current_user.id ,prototype_id: params[:id])
   end
 
   private
