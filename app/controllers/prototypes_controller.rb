@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update]
 
   def index
-    @prototypes = Prototype.all
+    @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(1)
   end
 
   def new
@@ -21,6 +21,13 @@ class PrototypesController < ApplicationController
 
   def show
   end
+  #destroyアクション作成しました
+  #削除後redirectでrootに飛ばすようにしました
+  def destroy
+    prototype = Prototype.find(params[:id])
+    prototype.destroy if prototype.user_id == current_user.id
+    redirect_to :action => 'index'
+  end
 
   def edit
     # @prototype = Prototype.find(params[:id])
@@ -34,6 +41,18 @@ class PrototypesController < ApplicationController
 
   private
 
+  def edit
+    # binding.pry
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def update
+    # binding.pry
+    @prototype.update(prototype_params)
+    redirect_to :root, notice: 'Your user infomation was successfully updated'
+  end
+
+  private
   def set_prototype
     @prototype = Prototype.find(params[:id])
   end
