@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit, :update]
+  before_action :set_prototype, only: [:show, :edit, :update, :create]
 
   def index
     @prototypes = Prototype.all
@@ -43,9 +43,7 @@ class PrototypesController < ApplicationController
       :title,
       :catch_copy,
       :concept,
-      :image,
-      :image_cache,
-      # :user_id,
+      :user_id,
       captured_images_attributes: [:content, :status, :id]
     )
   end
