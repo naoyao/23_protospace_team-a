@@ -7,7 +7,6 @@
       .proto-meta
         .proto-user
           = link_to prototype.user.name, user_path(prototype.user)
-        /deleateボタン作成しました
         - if user_signed_in? && current_user.id == prototype.user_id
           .proto-deleto
             = link_to 'Destroy', prototype, method: :delete, data: { confirm: 'Are you sure?' }

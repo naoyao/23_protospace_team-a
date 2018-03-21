@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit, :update]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
     @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(1)
@@ -30,7 +30,7 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    # @prototype = Prototype.find(params[:id])
+    @prototype = Prototype.find(params[:id])
   end
 
   def update
