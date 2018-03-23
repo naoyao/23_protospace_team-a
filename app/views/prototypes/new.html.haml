@@ -26,6 +26,7 @@
                     %img
                     = image.file_field :content
                     = image.hidden_field :status, value: "sub"
+                    = image.hidden_field :content, value: "Noimage"
       .row.proto-description
         .col-md-12
           %h4 Catch Copy
