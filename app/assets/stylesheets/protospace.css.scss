@@ -634,3 +634,13 @@ body {
   border-color: #ebccd1;
   color: #a94442;
 }
+
+/* -- POST Prototypes ----------------------------------- */
+.col-md-12{
+  img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+  }
+}
