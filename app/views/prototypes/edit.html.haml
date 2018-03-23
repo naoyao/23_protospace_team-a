@@ -19,7 +19,6 @@
               -# = image.label :image
               - if image.object.status == "main"
                 = image_tag(image.object.content)
-                = image.object.status
                 = image.file_field :content
 
         .col-md-12
@@ -30,7 +29,6 @@
                 %li.list-group-item.col-md-4
                   .image-upload
                     = image_tag(image.object.content)
-                    = image.object.status
                     = image.file_field :content
 
       .row.proto-description
