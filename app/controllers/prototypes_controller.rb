@@ -38,15 +38,7 @@ class PrototypesController < ApplicationController
   private
 
   def edit
-    # binding.pry
-    # @prototype = Prototype.find(params[:id])
   end
-
-  # def update
-  #   # binding.pry
-  #   @prototype.update(prototype_params)
-  #   redirect_to :root, notice: 'Your user infomation was successfully updated'
-  # end
 
   private
   def set_prototype
