@@ -1,4 +1,7 @@
 
+Gemfile
+
+Gemfile.lock
 *.jpg
 
 tmp/pids/server.pid
@@ -13,3 +16,5 @@ log/*
 public/uploads/*
 
 *.cache
+
+log/development.log
