@@ -11,3 +11,5 @@ log/development.log
 log/*
 
 public/uploads/*
+
+*.cache

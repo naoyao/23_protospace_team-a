@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update]
 
   def index
-    @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(1)
+    @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
@@ -29,10 +29,6 @@ class PrototypesController < ApplicationController
     redirect_to :action => 'index'
   end
 
-  def edit
-    # @prototype = Prototype.find(params[:id])
-  end
-
   def update
     # binding.pry
      @prototype.update(prototype_params) if @prototype.user_id == current_user.id
@@ -43,14 +39,14 @@ class PrototypesController < ApplicationController
 
   def edit
     # binding.pry
-    @prototype = Prototype.find(params[:id])
+    # @prototype = Prototype.find(params[:id])
   end
 
-  def update
-    # binding.pry
-    @prototype.update(prototype_params)
-    redirect_to :root, notice: 'Your user infomation was successfully updated'
-  end
+  # def update
+  #   # binding.pry
+  #   @prototype.update(prototype_params)
+  #   redirect_to :root, notice: 'Your user infomation was successfully updated'
+  # end
 
   private
   def set_prototype
@@ -66,6 +62,6 @@ class PrototypesController < ApplicationController
       :image_cache,
       # :user_id,
       captured_images_attributes: [:content, :status, :id]
-    )
+    ).merge(user_id: current_user.id)
   end
 end
