@@ -20,9 +20,11 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @prototypes = Prototype.find(params[:id])
+    @comments = @prototypes.comments
   end
-  #destroyアクション作成しました
-  #削除後redirectでrootに飛ばすようにしました
+
   def destroy
     prototype = Prototype.find(params[:id])
     prototype.destroy if prototype.user_id == current_user.id
@@ -33,6 +35,7 @@ class PrototypesController < ApplicationController
 
   def set_prototype
     @prototype = Prototype.find(params[:id])
+    binding.pry
   end
 
   def prototype_params
