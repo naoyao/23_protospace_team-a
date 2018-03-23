@@ -18,3 +18,7 @@ public/uploads/*
 *.cache
 
 log/development.log
+
+*.JPG
+
+*.JPG
